@@ -19,7 +19,6 @@ for i in "${!x_array[@]}"; do
 
   # loop through the input file
   for y_position in "${!input[@]}"; do
-    #echo "y_position: $y_position"
     # skip line(s) in input based on the y_slope
     if [ $((y_position%y_slope)) -eq 0 ]; then
       line=${input[y_position]}
@@ -34,7 +33,6 @@ for i in "${!x_array[@]}"; do
 
       if [ "$nextline" ]; then
         next=${nextline:x_position:1}
-        # echo "Line: $y_position $next"
         if [ $next = "#" ]; then
           slope_trees=$((slope_trees+1))
         fi
